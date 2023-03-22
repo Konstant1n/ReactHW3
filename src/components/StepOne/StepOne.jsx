@@ -17,7 +17,7 @@ export default function StepOne() {
                     id="userName"
                     type="text"
                     value={state.name}
-                    inputName="userName"
+                    inputName="name"
                 >
                 </Input>
                 <Input
@@ -25,7 +25,7 @@ export default function StepOne() {
                     id="userSurname"
                     type="text"
                     value={state.surname}
-                    inputName="userSurname"
+                    inputName="surname"
                 >
                 </Input>
                 <Input

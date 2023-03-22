@@ -1,6 +1,9 @@
 import React, { useReducer } from "react";
 import './App.css';
 import StepOne from "./components/StepOne/StepOne";
+import StepTwo from "./components/StepTwo/StepTwo";
+import Avatar from "./components/ImgBase64/DefaultAvatar";
+import StepThree from "./components/StepThree/StepThree";
 
 export const AppContext = React.createContext(null);
 
@@ -33,7 +36,7 @@ const initState = {
   houseNum: '',
   password: '',
   confirmPassword: '',
-  // imgSrc: defaultAvatar,
+  imgSrc: Avatar,
   stepNumPage: 'stepOne',
 };
 
@@ -46,6 +49,8 @@ function App() {
       <div className="App">
         <div className="formContainer">
           {state.stepNumPage === 'stepOne' && <StepOne />}
+          {state.stepNumPage === 'stepTwo' && <StepTwo />}
+          {state.stepNumPage === 'stepThree' && <StepThree />}
 
         </div>
       </div>

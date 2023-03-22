@@ -1,0 +1,8 @@
+.avatar{
+    width: 200px;
+    max-width: 200px;
+    padding-top: 25px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    display: block;
+}
