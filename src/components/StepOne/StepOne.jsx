@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { AppContext } from "../../App"
 import Input from "../TextInput/TextInput";
 import Button from "../Button/Button";
+import './StepOne.css'
 
 
 
@@ -11,7 +12,7 @@ export default function StepOne() {
     return (
         <>
             <h2>Step 1</h2>
-            <div>
+            <div className="inputClock">
                 <Input
                     labelName="Name"
                     id="userName"
@@ -36,7 +37,7 @@ export default function StepOne() {
                     inputName="email"
                 >
                 </Input>
-
+                <div className="buttonBlock">   
                 <Button
 
                     onClick={() => {
@@ -46,6 +47,8 @@ export default function StepOne() {
                             })
                     }}
                 >Next</Button>
+                </div>   
+
             </div>
         </>
     )

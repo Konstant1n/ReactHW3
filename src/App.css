@@ -1,14 +1,31 @@
+.theme-light {
+  --bg-color: #fff;
+  --text-color: #333;
+}
+
+.theme-dark {
+  --bg-color: #333;
+  --text-color: #fff;
+}
+
+.App {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+
+
 .App {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   max-width: 400px;
-  min-height: 500px;
   margin: 20px auto;
   padding: 30px 10px 20px 10px;
   box-shadow: 0px 0px 25px rgba(76, 1, 126, 0.35);
   border-radius: 10px;
+  min-height: 450px;
 }
 
 label {

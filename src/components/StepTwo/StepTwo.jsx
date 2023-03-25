@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { AppContext } from '../../App';
 import Input from "../TextInput/TextInput";
 import Button from "../Button/Button";
+import './StepTwo.css'
 
 
 export default function StepTwo() {
@@ -39,7 +40,7 @@ export default function StepTwo() {
                 </Input>
             </div>
           
-            <div>
+            <div className='buttonsBlock'>
                 <Button
 
                     onClick={()=>                    
