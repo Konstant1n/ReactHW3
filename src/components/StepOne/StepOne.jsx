@@ -37,17 +37,31 @@ export default function StepOne() {
                     inputName="email"
                 >
                 </Input>
-                <div className="buttonBlock">   
-                <Button
+                <div><p className='error'>{state.errFieldIsEmpty}</p></div>
+                <div className="buttonBlock">
+                    <Button
 
-                    onClick={() => {
-                            dispatch({
-                                type: 'STEP',
-                                payload: { stepNumPage: 'stepTwo' }
-                            })
-                    }}
-                >Next</Button>
-                </div>   
+                        onClick={() => {
+                            if (!state.name || !state.surname || !state.email) {
+                                dispatch({
+                                    type: 'isEmptyField',
+                                    payload: { errFieldIsEmpty: 'One or more field(s) are empty!' }
+                                })
+
+                            } else {
+
+                                dispatch({
+                                    type: 'STEP',
+                                    payload: { stepNumPage: 'stepTwo' }
+                                })
+                                dispatch({
+                                    type: 'isEmptyField',
+                                    payload: { errFieldIsEmpty: '' }
+                                })
+                            }
+                        }}
+                    >Next</Button>
+                </div>
 
             </div>
         </>

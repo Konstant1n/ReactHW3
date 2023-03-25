@@ -11,6 +11,7 @@ export default function StepFive () {
             <img src={state.imgSrc} alt="avatar" className='avatar' />
         <div>Name:  {" " + state.name}</div>
         <div>Surname:  {" " + state.surname}</div>
+        <div>Email:  {" " + state.email}</div>
         <div>City:  {" " + state.city}</div>
         <div>Street:  {" " + state.street}</div>
         <div>Building number:  {" " + state.houseNum}</div>

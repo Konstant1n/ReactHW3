@@ -15,7 +15,7 @@ export default function Input ({
         <div className='input-box'>
             <label htmlFor={id} className='input-label'>{labelName}</label>
             <input 
-                className='input-area'
+                className='form-control'
                 type={type} 
                 defaultValue={value}
                 name={inputName}

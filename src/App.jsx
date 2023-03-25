@@ -36,6 +36,12 @@ const reducer = (state, action) => {
         ...action.payload
       }
 
+    case 'isEmptyField':
+      return {
+        ...state,
+        ...action.payload
+      }
+
 
     default:
       return state;

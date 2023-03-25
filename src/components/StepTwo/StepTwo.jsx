@@ -6,63 +6,77 @@ import './StepTwo.css'
 
 
 export default function StepTwo() {
-    const {state, dispatch} = useContext(AppContext);
-    console.log(state)    
+    const { state, dispatch } = useContext(AppContext);
+    console.log(state)
 
     return (
         <>
             <h2>Step: 2</h2>
 
             <div>
-                <Input 
-                    labelName ="City" 
+                <Input
+                    labelName="City"
                     id="city"
-                    type ="text"
+                    type="text"
                     value={state.city}
-                    inputName ="city"              
+                    inputName="city"
                 >
                 </Input>
-                <Input 
-                    labelName ="Street" 
+                <Input
+                    labelName="Street"
                     id="streetName"
-                    type ="text"
-                    value={state.street }
-                    inputName ="street"              
+                    type="text"
+                    value={state.street}
+                    inputName="street"
                 >
                 </Input>
-                <Input 
-                    labelName ="Building" 
+                <Input
+                    labelName="Building"
                     id="buildingNumber"
-                    type ="number"
+                    type="number"
                     value={state.houseNum}
-                    inputName ="houseNum"              
+                    inputName="houseNum"
                 >
                 </Input>
             </div>
-          
+            <div><p className='error'>{state.errFieldIsEmpty}</p></div>
+
             <div className='buttonsBlock'>
                 <Button
 
-                    onClick={()=>                    
+                    onClick={() =>
                         dispatch({
                             type: 'STEP',
-                            payload: {stepNumPage:'stepOne'}
+                            payload: { stepNumPage: 'stepOne' }
                         })
-                    }                
-                >Previous</Button>    
+                    }
+                >Previous</Button>
                 <Button
 
-                    onClick={()=>{     
-                                  
+                    onClick={() => {
+                        if (!state.city || !state.street || !state.houseNum) {
+                            dispatch({
+                                type: 'isEmptyField',
+                                payload: { errFieldIsEmpty: 'One or more field(s) are empty!' }
+                            })
+
+                        } else {
+
                             dispatch({
                                 type: 'STEP',
-                                payload: {stepNumPage:'stepThree'}
+                                payload: { stepNumPage: 'stepThree' }
                             })
-                        
-                    }}                
-                >Next</Button>  
+
+                            dispatch({
+                                type: 'isEmptyField',
+                                payload: { errFieldIsEmpty: '' }
+                            })
+                        }
+                    }
+                    }
+                >Next</Button>
             </div>
-            
+
         </>
     );
 };
